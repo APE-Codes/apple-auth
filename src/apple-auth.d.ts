@@ -1,4 +1,4 @@
-declare module "apple-auth" {
+declare module "@apecodes/apple-auth" {
   export interface AppleAuthConfig {
     client_id: string;
     team_id: string;
@@ -6,10 +6,10 @@ declare module "apple-auth" {
     key_id: string;
     scope: string;
   }
-  export interface AppleClientSecret{
-    _config: AppleAuthConfig,
-    _privateKeyLocation: string,
-    _privateKeyMethod: string
+  export interface AppleClientSecret {
+    _config: AppleAuthConfig;
+    _privateKeyLocation: string;
+    _privateKeyMethod: string;
 
     generate(): Promise<string>;
   }
@@ -23,10 +23,20 @@ declare module "apple-auth" {
   }
   // https://developer.apple.com/documentation/signinwithapplerestapi/errorresponse
   export interface AppleAuthError {
-    error: "invalid_request" | "invalid_client" | "invalid_grant" | "unauthorized_client" | "unsupported_grant_type" | "invalid_scope";
+    error:
+      | "invalid_request"
+      | "invalid_client"
+      | "invalid_grant"
+      | "unauthorized_client"
+      | "unsupported_grant_type"
+      | "invalid_scope";
   }
   export default class AppleAuth {
-    constructor(config: AppleAuthConfig, privateKeyLocation: string, privateKeyMethod: string)
+    constructor(
+      config: AppleAuthConfig,
+      privateKeyLocation: string,
+      privateKeyMethod: string
+    );
     public _state: string;
     _tokenGenerator: AppleClientSecret;
     loginURL(): string;
