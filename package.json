@@ -1,6 +1,6 @@
 {
   "name": "@apecodes/apple-auth",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Sign in with Apple for NodeJS",
   "main": "src/apple-auth.js",
   "types": "src/apple-auth.d.ts",
